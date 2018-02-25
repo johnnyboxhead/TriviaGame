@@ -1,0 +1,34 @@
+.container {
+    padding: 5%;
+}
+
+#jeopardyimage{
+    background-image: url("assets/images/jeopardylogo.jpg");
+}
+
+#toprow {
+    height: 100%;
+    /* border: 1px solid red; */
+    font-size: 50px;
+
+    background-color: #666666;
+    opacity: .90;
+}
+
+#timer{
+    font-size: 40px
+}
+
+.row {
+    background-color: #666666;
+    opacity: .90;
+    margin-bottom: 2%;
+    color: white;
+}
+/* .col-md-3{
+    border: 1px solid blue;
+} */
+
+/* #test {
+    
+} */
