@@ -25,6 +25,13 @@
     margin-bottom: 2%;
     color: white;
 }
+
+button {
+    border-radius: 5px;
+    height: 200%;
+    width: 100%;
+    color: black
+}
 /* .col-md-3{
     border: 1px solid blue;
 } */
