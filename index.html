@@ -40,6 +40,23 @@
                 </label>
             </div>
         </div>
+        <div class="row">
+                <div class="col-lg-12">
+                    <div class="row text-left" id="q2">What career did Alex Trebek have before he started hosting Jeopardy?</div>
+                    <label class="radio-inline">
+                        <input type="radio" name="question2" class="answer2" id="q2a1" value="Newscaster"> Newscaster
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="question2" class="answer2" id="q2a2" value="Sports Announcer"> Sports Announcer
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="question2" class="answer2" id="q2a3" value="Crossword Puzzle Writer"> Crossword Puzzle Writer
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="question2" class="answer2" id="q2a4" value="Lawyer"> Lawyer
+                    </label>
+                </div>
+            </div>
     </div>
     <!-- <script src="assets/javascript/app.js"></script> -->
 <script>
@@ -56,8 +73,8 @@
         var answer2    
         var answer3
         var time = 10
-        var correct = 0
-        var incorrect = 0
+        var correctAns = 0
+        var incorrectAns = 0
         var intervalID = setInterval(clockTimer,1000)
         
         // $(".answer1").on("change", function(){
@@ -77,11 +94,22 @@
                 $("#timer").text("Time's Up!")
                 // $("#correct").text("1")
                 answer1 = $("input[name=question1]:checked").val()
+                answer2 = $("input[name=question2]:checked").val()
+                answer3 = $()
                 if (answer1 == "Ken Jennings"){
-                    $("#correct").text("1");
+                    correctAns = correctAns + 1;
                 }else {
-                    $("#correct").text("2");
+                    incorrectAns = incorrectAns + 1;
                 }
+
+                if (answer2 == "Newscaster"){
+                    correctAns = correctAns + 1;
+                }else {
+                    incorrectAns = incorrectAns + 1;
+                }
+
+                $("#correct").append(correctAns);
+                $("#incorrect").append(incorrectAns);
             }
             
             // if (answer1 == "Ken Jennings"){
