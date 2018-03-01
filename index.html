@@ -43,20 +43,26 @@
     </div>
     <!-- <script src="assets/javascript/app.js"></script> -->
 <script>
-    var answer1 = $("input[name=question1]:checked").val(); 
+    // var answer1 = $("input[name=question1]:checked").val()
     // var answer1 = $('input[name="question1"]:checked').val(); 
     // var answer1 = document.querySelector('input[name="question1"]:checked').value;   
-    var answer2 = 10;    
+    var answer2 = 10;
         // function start () {
             
         // }
     $(document).ready(function(){
         // var answer1 = $("input[name=question1]:checked").val(); 
-
-        
+        var answer1
+        var answer2    
         var answer3
         var time = 10
+        var correct = 0
+        var incorrect = 0
         var intervalID = setInterval(clockTimer,1000)
+        
+        // $(".answer1").on("change", function(){
+        //     answer1 = $("answer1").val()
+        // })
 
         function clockTimer() {
             time --
@@ -70,8 +76,11 @@
                 clearInterval(intervalID)
                 $("#timer").text("Time's Up!")
                 // $("#correct").text("1")
+                answer1 = $("input[name=question1]:checked").val()
                 if (answer1 == "Ken Jennings"){
                     $("#correct").text("1");
+                }else {
+                    $("#correct").text("2");
                 }
             }
             
