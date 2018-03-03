@@ -126,29 +126,16 @@
     </div>
     <!-- <script src="assets/javascript/app.js"></script> -->
 <script>
-    // var answer1 = $("input[name=question1]:checked").val()
-    // var answer1 = $('input[name="question1"]:checked').val(); 
-    // var answer1 = document.querySelector('input[name="question1"]:checked').value;   
-    var answer2 = 10;
-        // function start () {
-            
-        // }
     $(document).ready(function(){
-        // var answer1 = $("input[name=question1]:checked").val(); 
         var answer1
         var answer2    
         var answer3
         var answer4
         var answer5
-        var time = 10
+        var time = 90
         var correctAns = 0
         var incorrectAns = 0
         var intervalID 
-        // = setInterval(clockTimer,1000)
-        
-        // $(".answer1").on("change", function(){
-        //     answer1 = $("answer1").val()
-        // })
 
         $("#start").on("click", function(){   
             intervalID = setInterval(clockTimer,1000)
@@ -182,12 +169,8 @@
             incorrectAns = 0;
         })
         
-
         function stopTimer() {
-            // if (time === 0) {
                 clearInterval(intervalID)
-                // $("#timer").text("Time's Up!")
-                // $("#correct").text("1")
                 answer1 = $("input[name=question1]:checked").val()
                 answer2 = $("input[name=question2]:checked").val()
                 answer3 = $("input[name=question3]:checked").val()
@@ -223,94 +206,8 @@
                 $("#incorrect").append(incorrectAns);
                 incorrectAns = 0;
                 correctAns = 0;
-            // }
-            
-            // if (answer1 == "Ken Jennings"){
-            //     $("#correct").text("1");
-            // }
-            // = document.question1.value
-        }
-    })
-
-
-
-
+            }
+        })
 </script>
 </body>
 </html>
-
-                <!-- <div class="row text-left" id="question1">Who has won the most consecutive games of Jeopardy?</div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <button  id="q1a1">Brad Rutter</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q1a2">Ken Jennings</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q1a3">Roger Craig</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q1a4">Austin Rogers</button>
-                    </div>
-                </div>
-                <div class="row text-left" id="question2">What career did Alex Trebek have before he started hosting Jeopardy?</div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <button  id="q2a1">Newscaster</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q2a2">Sports Announcer</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q2a3">Crossword Puzzle Writer</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q2a4">Lawyer</button>
-                    </div>
-                </div>
-                <div class="row text-left" id="question3">Question 3 goes here</div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <button  id="q3a1">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q3a2">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q3a3">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q3a4">Button</button>
-                    </div>                    
-                </div>
-                <div class="row text-left" id="question4">Question 4 goes here</div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <button  id="q4a1">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q4a2">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q4a3">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q4a4">Button</button>
-                    </div>
-                </div>
-                <div class="row text-left" id="question5">Question 5 goes here</div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <button  id="q5a1">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q5a2">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q5a3">Button</button>
-                    </div>
-                    <div class="col-md-3">
-                        <button  id="q5a4">Button</button>
-                    </div>
-                </div> -->
