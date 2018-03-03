@@ -18,6 +18,13 @@
             <div class="col-md-12 text-center" id="timer">90</div>
         </div>
         <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <button type="button" class="btn btn-success" id="start">Start</button>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <div class="row">
             <div class="col-md-12 text-center" id="correct">You got this many answers correct: </div>
         </div>
         <div class="row">
@@ -41,22 +48,81 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-lg-12">
-                    <div class="row text-left" id="q2">What career did Alex Trebek have before he started hosting Jeopardy?</div>
-                    <label class="radio-inline">
-                        <input type="radio" name="question2" class="answer2" id="q2a1" value="Newscaster"> Newscaster
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="question2" class="answer2" id="q2a2" value="Sports Announcer"> Sports Announcer
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="question2" class="answer2" id="q2a3" value="Crossword Puzzle Writer"> Crossword Puzzle Writer
-                    </label>
-                    <label class="radio-inline">
-                        <input type="radio" name="question2" class="answer2" id="q2a4" value="Lawyer"> Lawyer
-                    </label>
-                </div>
+            <div class="col-lg-12">
+                <div class="row text-left" id="q2">What career did Alex Trebek have before he started hosting Jeopardy?</div>
+                <label class="radio-inline">
+                    <input type="radio" name="question2" class="answer2" id="q2a1" value="Newscaster"> Newscaster
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question2" class="answer2" id="q2a2" value="Sports Announcer"> Sports Announcer
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question2" class="answer2" id="q2a3" value="Crossword Puzzle Writer"> Crossword Puzzle Writer
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question2" class="answer2" id="q2a4" value="Lawyer"> Lawyer
+                </label>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row text-left" id="q3">What is the larget possible score in any given game?</div>
+                <label class="radio-inline">
+                    <input type="radio" name="question3" class="answer3" id="q3a1" value="124,600"> $124,600
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question3" class="answer3" id="q3a2" value="92,200"> $92,200
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question3" class="answer3" id="q3a3" value="210,000"> $210,000
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question3" class="answer3" id="q3a4" value="566,400"> $566,400
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row text-left" id="q4">What is the average age for Jeopardy viewers?</div>
+                <label class="radio-inline">
+                    <input type="radio" name="question4" class="answer4" id="q4a1" value="65"> 65
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question4" class="answer4" id="q4a2" value="57"> 57
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question4" class="answer4" id="q4a3" value="34"> 34
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question4" class="answer4" id="q4a4" value="47"> 47
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row text-left" id="q5">What man's portrayal of Sean Connery on Saturday Night Live is considered one of the classic performances?</div>
+                <label class="radio-inline">
+                    <input type="radio" name="question5" class="answer5" id="q4a1" value="Will Farrell"> Will Farrell
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question5" class="answer5" id="q4a2" value="Norm Macdonald"> Norm Macdonald
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question5" class="answer5" id="q4a3" value="Jimmy Fallon"> Jimmy Fallon
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="question5" class="answer5" id="q4a4" value="Darrell Hammond"> Darrell Hammond
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <button type="button" class="btn btn-success" id="submit">Submit</button>
+            </div>
+            <div class="col-lg-6">
+                <button type="button" class="btn btn-info" id="reset">Reset</button>
+            </div>
+        </div>
     </div>
     <!-- <script src="assets/javascript/app.js"></script> -->
 <script>
@@ -72,30 +138,61 @@
         var answer1
         var answer2    
         var answer3
+        var answer4
+        var answer5
         var time = 10
         var correctAns = 0
         var incorrectAns = 0
-        var intervalID = setInterval(clockTimer,1000)
+        var intervalID 
+        // = setInterval(clockTimer,1000)
         
         // $(".answer1").on("change", function(){
         //     answer1 = $("answer1").val()
         // })
 
-        function clockTimer() {
-            time --
-            $("#timer").text(time)
-            stopTimer()
-        }
+        $("#start").on("click", function(){   
+            intervalID = setInterval(clockTimer,1000)
+            function clockTimer() {
+                time --
+                $("#timer").text(time)
+                // stopTimer()
+                if (time === 0) {
+                    $("#timer").text("Time's Up!");
+                    stopTimer();
+                }
+            }
+        }) 
+
+        $("#submit").on("click", function(){
+            stopTimer();
+        })
+
+        $("#reset").on("click", function(){
+            clearInterval(intervalID);
+            time = 90;
+            $("#timer").text(time);
+            $("#correct").text("You got this many answers correct: ");
+            $("#incorrect").text("You got this many answers incorrect: ");
+            $(".answer1").prop("checked", false);
+            $(".answer2").prop("checked", false);
+            $(".answer3").prop("checked", false);
+            $(".answer4").prop("checked", false);
+            $(".answer5").prop("checked", false);
+            correctAns = 0;
+            incorrectAns = 0;
+        })
+        
 
         function stopTimer() {
-            
-            if (time === 0) {
+            // if (time === 0) {
                 clearInterval(intervalID)
-                $("#timer").text("Time's Up!")
+                // $("#timer").text("Time's Up!")
                 // $("#correct").text("1")
                 answer1 = $("input[name=question1]:checked").val()
                 answer2 = $("input[name=question2]:checked").val()
-                answer3 = $()
+                answer3 = $("input[name=question3]:checked").val()
+                answer4 = $("input[name=question4]:checked").val()
+                answer5 = $("input[name=question5]:checked").val()
                 if (answer1 == "Ken Jennings"){
                     correctAns = correctAns + 1;
                 }else {
@@ -107,10 +204,26 @@
                 }else {
                     incorrectAns = incorrectAns + 1;
                 }
-
+                if (answer3 == "566,400"){
+                    correctAns = correctAns +1;
+                }else {
+                    incorrectAns = incorrectAns +1
+                }
+                if (answer4 == "65"){
+                    correctAns = correctAns +1;
+                }else {
+                    incorrectAns = incorrectAns +1
+                }
+                if (answer5 == "Darrell Hammond"){
+                    correctAns = correctAns +1;
+                }else {
+                    incorrectAns = incorrectAns +1
+                }
                 $("#correct").append(correctAns);
                 $("#incorrect").append(incorrectAns);
-            }
+                incorrectAns = 0;
+                correctAns = 0;
+            // }
             
             // if (answer1 == "Ken Jennings"){
             //     $("#correct").text("1");
