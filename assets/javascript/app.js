@@ -10,6 +10,7 @@ $(document).ready(function(){
     var intervalID 
 
     $("#start").on("click", function(){   
+        clearInterval(intervalID);
         intervalID = setInterval(clockTimer,1000)
         function clockTimer() {
             time --
