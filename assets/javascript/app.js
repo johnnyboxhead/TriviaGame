@@ -9,7 +9,10 @@ $(document).ready(function(){
     var incorrectAns = 0
     var intervalID 
 
+    $("[id*='q']").hide()
+
     $("#start").on("click", function(){   
+        $("[id*='q']").show()
         clearInterval(intervalID);
         intervalID = setInterval(clockTimer,1000)
         function clockTimer() {
@@ -40,6 +43,7 @@ $(document).ready(function(){
         $(".answer5").prop("checked", false);
         correctAns = 0;
         incorrectAns = 0;
+        $("[id*='q']").hide()
     })
     
     function stopTimer() {
